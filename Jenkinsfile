@@ -1,5 +1,11 @@
 pipeline {
-    agent any
+    agent {
+        docker {
+            image 'mcr.microsoft.com/playwright:v1.32.0-focal'
+            args '-u root:root' 
+        }
+    }
+
     stages {
 
         stage('Install Dependencies') {
