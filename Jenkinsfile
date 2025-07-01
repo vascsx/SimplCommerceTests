@@ -1,8 +1,7 @@
 pipeline {
     agent {
         docker {
-            image 'mcr.microsoft.com/playwright:v1.53.0-noble'
-            args '-u root:root' 
+            image 'node:18'
         }
     }
 
