@@ -11,6 +11,7 @@ test('Should login successfully using Admin profile', async ({ page }) => {
   await expect(page.locator('a.nav-link[title="Manage"]')).toHaveText('Hello Shop Admin!');
 });
 
+
 test('Should not login with empty password (Admin profile)', async ({ page }) => {
   const loginPage = new LoginPage();
   await loginPage.login(page, LOGIN_URL, VALID_EMAIL, '');
