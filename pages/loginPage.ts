@@ -5,7 +5,7 @@ class LoginPage {
     private selectors = {
         email: '[id="Email"]',
         password: '[id="Password"]',
-        loginButton: 'button[type="submit"], [role="button"][name="Log in"]',
+        loginButton: 'button.btn.btn-primary:has-text("Log in")'
     };
 
     async fillEmail(page: any, email: string) {
@@ -18,12 +18,11 @@ class LoginPage {
         await page.fill(this.selectors.password, password);
     }
 
-    async loginWithAdminCredentials(page: any, loginUrl: string, email: string, password: string) {
+    async login(page: any, loginUrl: string, email: string, password: string) {
         await page.goto(loginUrl);
         await this.fillEmail(page, email);
         await this.fillPassword(page, password);
         await page.click(this.selectors.loginButton);
-        await page.waitForSelector('h1:has-text("Dashboard")', { state: 'visible' });
     }
 }
 
