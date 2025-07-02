@@ -2,9 +2,16 @@ pipeline {
     agent any
 
     stages {
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm install'
+            }
+        }
+
         stage('Run Playwright Tests') {
             steps {
-                sh 'docker-compose run --rm playwright-tests npx playwright test'
+                sh 'npx playwright install --with-deps'
+                sh 'npx playwright test'
             }
         }
     }

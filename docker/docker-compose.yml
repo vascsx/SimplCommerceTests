@@ -2,16 +2,18 @@ version: '3.8'
 
 services:
   playwright-tests:
-    build: .
+    build: ..
     container_name: playwright-tests
     working_dir: /app
     volumes:
-      - ./:/app
+      - ../:/app
     environment:
       - NODE_ENV=ci
 
   jenkins:
-    image: jenkins/jenkins:lts
+    build:
+      context: .
+      dockerfile: Dockerfile
     container_name: jenkins
     user: root
     ports:
