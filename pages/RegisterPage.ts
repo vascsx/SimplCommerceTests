@@ -2,7 +2,7 @@ import { expect } from '@playwright/test';
 import registerData from '../utils/register.json';
 
 class RegisterPage {
-    private selectors = {
+    public selectors = {
         email: '[id="Email"]',
         fullName: '[id="FullName"]',
         password: '[id="Password"]',
