@@ -32,7 +32,7 @@ test('Should not register with empty full name', async ({ page }) => {
   await expect(page.locator('#FullName-error')).toHaveText('The Name field is required.');
 });
 
-test.only('Should not register with empty password', async ({ page }) => {
+test('Should not register with empty password', async ({ page }) => {
   const registerPage = new RegisterPage();
   const VALID_EMAIL = faker.internet.email();
   
