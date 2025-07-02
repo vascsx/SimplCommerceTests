@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('Run Playwright Tests') {
             steps {
-                sh 'docker compose run --rm playwright-tests'
+                sh 'docker-compose run --rm playwright-tests'
             }
         }
     }
