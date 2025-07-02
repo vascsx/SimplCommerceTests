@@ -1,6 +1,5 @@
 {
     "registerUrl": "https://demo.simplcommerce.com/register",
-    "email": "admin@simplcommerce.com",
     "invalidEmail": "admin@simplcommerce.com",
     "fullName": "Shop Admin",
     "password": "1qazZAQ!"
