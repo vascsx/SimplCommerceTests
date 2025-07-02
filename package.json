@@ -12,6 +12,7 @@
   "description": "",
   "devDependencies": {
     "@playwright/test": "^1.53.1",
+    "playwright": "^1.53.2",
     "typescript": "^5.0.0",
     "ts-node": "^10.0.0",
     "@types/node": "^20.0.0"
