@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../pages/LoginPage';
+import { LoginPage } from '../pages/loginPage';
 import loginData from '../utils/login.json';
 
 const { email: VALID_EMAIL, password: VALID_PASSWORD, loginUrl: LOGIN_URL } = loginData;
