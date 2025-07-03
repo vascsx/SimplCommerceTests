@@ -9,5 +9,8 @@
     "forceConsistentCasingInFileNames": true,
     "outDir": "dist"
   },
-  "include": ["tests", "pages", "utils"]
+  "include": ["tests", "pages", "utils"],
+  "paths": {
+  "@pages/*": ["src/pages/*"]
+}
 }
