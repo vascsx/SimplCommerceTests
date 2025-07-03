@@ -4,13 +4,12 @@ import loginData from '../utils/login.json';
 
 const { email: VALID_EMAIL, password: VALID_PASSWORD, loginUrl: LOGIN_URL } = loginData;
 
-test.only('Should login successfully using Admin profile', async ({ page }) => {
+test('Should login successfully using Admin profile', async ({ page }) => {
   const loginPage = new LoginPage();
   await loginPage.login(page, LOGIN_URL, VALID_EMAIL, VALID_PASSWORD);
   await page.waitForSelector('h1:has-text("Dashboard")', { state: 'visible' });
   await expect(page.locator('a[title="Manage"]')).toHaveText('Hello Shop Admin!');
 });
-
 
 test('Should not login with empty password (Admin profile)', async ({ page }) => {
   const loginPage = new LoginPage();
