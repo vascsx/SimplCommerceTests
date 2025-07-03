@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 import { faker } from '@faker-js/faker'
 import registerData from '../utils/register.json';
-import { RegisterPage } from '../pages/RegisterPage';
+import { RegisterPage } from '../pages/registerPage';
 
 const { fullName: FULL_NAME, password: VALID_PASSWORD, registerUrl: REGISTER_URL } = registerData;
 
