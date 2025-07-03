@@ -28,21 +28,6 @@ test('Should show errors when creating category with empty fields', async ({ pag
     await expect(slugError).toBeVisible();
 });
 
-test('Should show error for name when only slug is filled', async ({ page }) => {
-    await page.click('text=Catalog');
-    await page.click('[ui-sref="category"]');
-    await expect(page).toHaveURL(/.*\/admin#!\/category/);
-    await page.click('[ui-sref="category-create"]');
-    await page.fill('input[name="slug"]', 'category-slug');
-    await page.click('button:has-text("Save")');
-
-    const errorBox = page.locator('div.bg-danger[ng-show="vm.validationErrors"]');
-    await expect(errorBox).toBeVisible();
-
-    const nameError = errorBox.locator('li:has-text("The Name field is required.")');
-    await expect(nameError).toBeVisible();
-});
-
 test('Should create category when all fields are correct', async ({ page }) => {
     await page.click('text=Catalog');
     await page.click('[ui-sref="category"]');
@@ -59,3 +44,17 @@ test('Should show error for slug when only name is filled', async ({ page }) => 
     await expect(page).toHaveURL(/.*\/admin#!\/category/);
 });
 
+test('Should show error for name when only slug is filled', async ({ page }) => {
+    await page.click('text=Catalog');
+    await page.click('[ui-sref="category"]');
+    await expect(page).toHaveURL(/.*\/admin#!\/category/);
+    await page.click('[ui-sref="category-create"]');
+    await page.fill('input[name="slug"]', 'category-slug');
+    await page.click('button:has-text("Save")');
+
+    const errorBox = page.locator('div.bg-danger[ng-show="vm.validationErrors"]');
+    await expect(errorBox).toBeVisible();
+
+    const nameError = errorBox.locator('li:has-text("The Name field is required.")');
+    await expect(nameError).toBeVisible();
+});

@@ -10,7 +10,4 @@
     "outDir": "dist"
   },
   "include": ["tests", "pages", "utils"],
-  "paths": {
-  "@pages/*": ["src/pages/*"]
-}
 }
