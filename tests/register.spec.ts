@@ -9,7 +9,7 @@ test('Should register successfully using Admin profile', async ({ page }) => {
   const registerPage = new RegisterPage();
   const VALID_EMAIL = faker.internet.email();
   await registerPage.register(page, REGISTER_URL, VALID_EMAIL, FULL_NAME, VALID_PASSWORD, VALID_PASSWORD);
-  await page.waitForSelector('h1:has-text("Dashboard")', { state: 'visible' });
+  await expect(page.locator('a[title="Manage"]')).toHaveText('Hello Shop Admin!');
 });
 
 test('Should not register with already Email', async ({ page }) => {
